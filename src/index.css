@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 248 252; --surface: 255 255 255; --ink: 18 20 31; --muted: 98 106 128; --line: 224 228 240; --brand: 99 82 246;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --bg: 9 11 19; --surface: 18 22 36; --ink: 236 239 248; --muted: 150 158 184; --line: 38 44 66; --brand: 139 123 255;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: 9 11 19; --surface: 18 22 36; --ink: 236 239 248; --muted: 150 158 184; --line: 38 44 66; --brand: 139 123 255;
+    color-scheme: dark;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-bg font-sans text-ink antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--brand)); outline-offset: 2px; }
+
+@layer components {
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm text-ink transition placeholder:text-muted/70 focus:border-brand focus:outline-none focus:ring-4 focus:ring-brand/20;
+  }
+  .field[aria-invalid='true'] { @apply border-red-500 focus:ring-red-500/20; }
+  .gradient-text { @apply bg-gradient-to-r from-brand via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent; }
+  .chip { @apply rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm transition hover:border-brand; }
+  .chip[aria-pressed='true'] { @apply border-brand bg-brand/10 text-brand; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
