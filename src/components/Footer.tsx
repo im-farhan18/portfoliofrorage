@@ -44,8 +44,8 @@ export default function Footer() {
             <img
               src={DEV.photo}
               alt={`${DEV.name}, developer of PortfolioForge`}
-              width={72}
-              height={96}
+              width={172}
+              height={196}
               loading="lazy"
               className="h-24 w-[72px] rounded-xl object-cover object-top"
             />
@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
 
       <p className="border-t border-line py-4 text-center text-xs text-muted">
-        © 2026 {DEV.name}. All rights reserved. Sample content in templates is fictional demo data.
+      <b>  © 2026 {DEV.name}. All rights reserved.</b><br></br><i> Sample content in templates is fictional demo data.</i>
       </p>
     </footer>
   );
