@@ -48,15 +48,15 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-4 py-12 text-center sm:flex-row sm:text-left">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 py-20 text-center sm:flex-row sm:text-left">
           <div className="flex-none rounded-2xl border border-line bg-gradient-to-b from-brand/25 to-surface p-1.5 shadow-soft">
             <img
               src={DEV.photo}
               alt={`${DEV.name}, developer of PortfolioForge`}
-              width={120}
-              height={160}
+              width={150}
+              height={200}
               loading="lazy"
-              className="h-40 w-[120px] rounded-xl object-cover object-top"
+              className="h-[200px] w-[150px] rounded-xl object-cover object-top"
             />
           </div>
           <div>
